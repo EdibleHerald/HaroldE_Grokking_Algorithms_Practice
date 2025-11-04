@@ -12,4 +12,37 @@
 # 1.) Is there a connection between point A and B?
 # 2.) What is the shortest distance between point A and B?
 #
-#
+# O(V + E) , V = vertices, E = Edges
+
+from collections import deque
+graph = {
+    "you" : ["alice","bob","claire"],
+    "bob" : ["anuj","peggy"],
+    "alice" : ["peggy"],
+    "claire" : ["thom","jonny"],
+    "anuj" : [],
+    "peggy": [],
+    "thom" : [],
+    "jonny": []
+}
+
+
+def Breadth_First_Search(name):
+    search_queue = deque()
+    search_queue+= graph[name]
+    searched = set()
+    while search_queue:
+        person = search_queue.popleft()
+        if not person in searched: 
+            if person_is_seller(person):
+                print(person + " is a mango seller!")
+                return True
+            else:
+                search_queue+= graph[person]
+                searched.add(person)
+    return False
+
+def person_is_seller(name):
+    return name[-1] == 'm'
+
+Breadth_First_Search("you")
