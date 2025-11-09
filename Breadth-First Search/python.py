@@ -29,7 +29,7 @@ graph = {
 
 def Breadth_First_Search(name):
     search_queue = deque()
-    search_queue+= graph[name]
+    search_queue += graph[name]
     searched = set()
     while search_queue:
         person = search_queue.popleft()
@@ -38,6 +38,7 @@ def Breadth_First_Search(name):
                 print(person + " is a mango seller!")
                 return True
             else:
+                print(person + " is not a mango seller!")
                 search_queue+= graph[person]
                 searched.add(person)
     return False
@@ -45,4 +46,19 @@ def Breadth_First_Search(name):
 def person_is_seller(name):
     return name[-1] == 'm'
 
-Breadth_First_Search("you")
+def Depth_First_Search(name,searched = set()):
+    search_queue = deque()
+    search_queue += graph[name]
+    while search_queue:
+        person = search_queue.popleft()
+        if person not in searched:
+            if person_is_seller(person):
+                print(person + " is a mango seller!")
+                return True
+            else:
+                print(person + " is not a mango seller!")
+                searched.add(person)
+                Depth_First_Search(person,searched)
+
+#Breadth_First_Search("you")
+#Depth_First_Search("you")
