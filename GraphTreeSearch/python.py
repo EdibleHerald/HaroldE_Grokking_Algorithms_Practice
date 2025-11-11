@@ -61,4 +61,4 @@ def Depth_First_Search(name,searched = set()):
                 Depth_First_Search(person,searched)
 
 #Breadth_First_Search("you")
-#Depth_First_Search("you")
+Depth_First_Search("you")
