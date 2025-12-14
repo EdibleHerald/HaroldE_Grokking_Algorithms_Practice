@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 public class Main {
     public static void main(String[] args){
         Map<String,String[]> dictionary = new HashMap<>();
-        String[] you = {"alice","bob","claire","notThom"};
+        String[] you = {"alice","bob","claire","dom"};
         String[] bob = {"anuj","peggy"};
         String[] alice = {"peggy","thom"};
         String[] claire = {"thom","jonny"};
@@ -25,7 +25,10 @@ public class Main {
         dictionary.put("thom",thom);
         dictionary.put("jonny",jonny);
 
-        // Breadth_First_Search(dictionary,"you");
+        System.out.println("Breadth-First Search results:");
+        Breadth_First_Search(dictionary,"you");
+        System.out.println("----------");
+        System.out.println("Depth-First Search results:");
         Depth_First_Search(dictionary, "you");
         
     }
