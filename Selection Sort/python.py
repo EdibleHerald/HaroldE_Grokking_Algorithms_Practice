@@ -27,3 +27,19 @@ def selectionSort(arr):
         smallest = findSmallest(copiedArr)
         newArr.append(copiedArr.pop(smallest))
     return newArr
+
+print("Selection Sort Algorithm: ")
+print("The old array is: ")
+
+print("[",end=" ")
+for i in testArray:
+    print(i,end=" ")
+print("]")
+
+newArray = selectionSort(testArray)
+
+print("The sorted array is:")
+print("[",end=" ")
+for i in newArray:
+    print(i,end=" ")
+print("]")
