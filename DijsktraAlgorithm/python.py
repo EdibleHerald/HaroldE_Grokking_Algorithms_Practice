@@ -6,7 +6,7 @@ graph = {}
 # Create another hash table to represent costs of out-neighbors (for node "Start" in this case)
 graph["start"] = {}
 graph["start"]["a"] = 6
-graph["start"]["b"] = 2
+graph["start"]["b"] = 4
 
 # Node "a" out-neighbors
 graph["a"] = {}
@@ -24,8 +24,8 @@ graph["fin"] = {}
 # NEXT: A hash table to hold CURRENT costs of nodes
 infinity = math.inf
 costs = {}
-costs["a"] = 6
-costs["b"] = 2
+costs["a"] = graph["start"]["a"]
+costs["b"] = graph["start"]["b"]
 costs["fin"] = infinity
 
 # NEXT: A hash table to track parents
