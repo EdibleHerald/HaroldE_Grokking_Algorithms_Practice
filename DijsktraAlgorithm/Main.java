@@ -142,30 +142,3 @@ public class Main {
         return parents;
     }
 }
-
-class Node {
-    // Node holds prices depending on WHERE the previous node is at. 
-    // For example:
-    // Node: Bass Guitar
-    //   - If coming from "Rare LP" --> Price is 15 ("Rare LP":15)
-    //   - If coming from "Poster" --> Price is 30 ("Poster":30)
-
-    private HashMap<String,Integer> prices;
-    public String itemName;
-
-    public Node(String itemName){
-        // Constructor
-        // Holds item name
-        this.itemName = itemName;
-        this.prices = new HashMap<>();
-    }
-
-    // Uses HashMap.put(); is simply a wrapper
-    public void addPrice(String name, int price){
-        prices.put(name,price);
-    }
-
-    public int getPrice(String name){
-        return prices.get(name);
-    }
-}
