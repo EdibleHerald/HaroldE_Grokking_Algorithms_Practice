@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/edible/Projects/HaroldE_Grokking_Algorithms_Practice/Linked List/Singly Linked List/out/build/GCC 15.2.1 x86_64-pc-linux-gnu",
-  "command": "/usr/bin/g++   -Wall -Wextra -Wpedantic -g -std=gnu++23 -Wall -Wextra -Wpedantic -o CMakeFiles/SinglyLinkedList.dir/main.cpp.o -c \"/home/edible/Projects/HaroldE_Grokking_Algorithms_Practice/Linked List/Singly Linked List/main.cpp\"",
-  "file": "/home/edible/Projects/HaroldE_Grokking_Algorithms_Practice/Linked List/Singly Linked List/main.cpp",
-  "output": "CMakeFiles/SinglyLinkedList.dir/main.cpp.o"
-}
-]
