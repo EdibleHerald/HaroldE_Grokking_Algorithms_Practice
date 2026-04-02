@@ -1,6 +1,6 @@
 /practice
 /.vscode
-/*/out
-/*/CMakeLists.txt
-/*/CMakePresets.json
 /.gitignore
+/out
+*.txt
+*.json
