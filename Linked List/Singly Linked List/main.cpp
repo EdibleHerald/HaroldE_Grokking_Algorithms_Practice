@@ -2,6 +2,7 @@
 #include "singlylinkedlist.cpp"
 
 // using namespace std::chrono_literals;
+using namespace list;
 
 SinglyLinkedList funnyFunction();
 
