@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdexcept>
 
-namespace list{
+namespace LinkedList{
     class Node
     {
         public:
@@ -60,6 +60,47 @@ namespace list{
                 return *this;
             }
         private:
+    };
+
+    class SinglyLinkedList_Iterator{
+        private:
+            Node* currNode = nullptr;
+        public:
+
+            // Constructor/Destructor
+            SinglyLinkedList_Iterator(Node* passedNode):currNode{passedNode}
+            {
+                // Done
+            }
+
+            ~SinglyLinkedList_Iterator(){
+                currNode = nullptr; // Thats it!
+            }
+            
+            // Define operators ++, !=, *
+            SinglyLinkedList_Iterator* operator++()
+            {
+                // Move onto next node
+                currNode = currNode->next;
+
+                return this;
+            }
+
+            bool operator!=(Node* compareNode)
+            {
+                // Compare addresses of each node
+                if(currNode == compareNode)
+                {
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+
+            Node* operator*(){
+                return currNode;
+            }
+
     };
 
     class SinglyLinkedList
@@ -368,6 +409,18 @@ namespace list{
 
                 return data;
             }
+
+            using iterator = SinglyLinkedList_Iterator; // defined temporary alias for this namespace
+            using const_iterator = const SinglyLinkedList_Iterator;
+
+            // Iterator class methods
+            const_iterator cbegin() const {return SinglyLinkedList_Iterator(this->Head->next);}
+            Node* cend() const {return this->Tail->next;}
+            const_iterator begin() const {return cbegin();}
+            Node* end() const {return cend();}
+            iterator begin() {return SinglyLinkedList_Iterator(this->Head->next);}
+            Node* end() {return this->Tail->next;}
+
 
         private:
             // Empty "Head" list

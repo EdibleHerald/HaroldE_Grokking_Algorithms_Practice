@@ -1,19 +1,17 @@
 #include "main.h"
 #include "singlylinkedlist.cpp"
 
-// using namespace std::chrono_literals;
-using namespace list;
+using namespace LinkedList;
 
 SinglyLinkedList funnyFunction();
 
 int main(){
     SinglyLinkedList list = SinglyLinkedList();
-    // std::cout << list.get_head_data() << std::endl;
+   
     int main = 1;
     int main2;
     std::string user;
-    // ISSUE: RUNNING THIS RETURNS "20" INSTEAD OF "5"
-    // I SUSPECT ITS AN ISSUE WITH THE "find()"/"get()" FUNCTION LOGIC
+
     try{
         list.push_back(5); // 5
         list.push_back(10); // 4
@@ -26,10 +24,15 @@ int main(){
         //     std::cout << "Index: "<< i << " Number:" << list.get(i) << std::endl;
         // }
 
+        int num = 0;
+        for(auto x: list){
+            std::cout << "Index: " << num << ", Data: " << x->data << std::endl;
+            num+=1;
+        }
         // test move assignment
         // SinglyLinkedList listMoveAssign;
-        SinglyLinkedList listMoveAssign;
-        listMoveAssign = std::move(funnyFunction());
+        // SinglyLinkedList listMoveAssign;
+        // listMoveAssign = std::move(funnyFunction());
         // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
         // listMoveAssign.pop_front();
@@ -39,9 +42,9 @@ int main(){
         // listMoveAssign.pop_front();
         // listMoveAssign.pop_front();
     
-        for(int i=0; i < list.size;++i){
-            std::cout << "Index: "<< i << " Number:" << list.get(i) << std::endl;
-        }
+        // for(int i=0; i < list.size;++i){
+        //     std::cout << "Index: "<< i << " Number:" << list.get(i) << std::endl;
+        // }
         // std::cout << listMoveAssign.Tail->data << std::endl;
     }catch(std::out_of_range what){
         std::cout << what.what() << std::endl;
